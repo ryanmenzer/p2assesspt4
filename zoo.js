@@ -1,8 +1,37 @@
 //------------------------------------------------------------------------------------------------------------------
 // YOUR CODE: Create your Zoo "object literal" and Animal "constructor" and "prototypes" here.
 //------------------------------------------------------------------------------------------------------------------
+function Animal(name, legs) {
+  this.name = name;
+  this.legs = legs;
+}
+
+Animal.prototype.identify = function() {
+
+}
 
 
+var Zoo = {
+  init: function(animals){
+    this.animals = animals
+  },
+
+  quadrupeds: function(){
+    var quadrupeds = this.animals.filter(function(animal){
+      return animal.legs == 4
+    });
+
+    return quadrupeds
+  }, 
+
+  bipeds: function() {
+    var bipeds = this.animals.filter(function(animal){
+      return animal.legs == 2
+    });
+
+    return bipeds
+  }
+}
 
 //------------------------------------------------------------------------------------------------------------------
 // DRIVER CODE: Do **NOT** change anything below this point. Your task is to implement code above to make this work.
